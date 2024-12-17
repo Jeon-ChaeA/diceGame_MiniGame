@@ -43,7 +43,7 @@
 
 ## 🔗 링크
 
-- [주사위 던지기게임](https://jeon-chaea.github.io/dateGame/)
+- [주사위 던지기게임](https://jeon-chaea.github.io/diceGame_MiniGame/)
 
 
 
