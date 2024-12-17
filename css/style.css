@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'netmarbleB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.1/netmarbleB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'netmarbleB';
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #53b157;
+}
+.container{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+  padding: 35px 25px;
+  border-radius: 10px;
+}
+.container h2{
+  font-size: 2rem;
+  color: #226825;
+  margin-bottom: 50px;
+}
+.dice{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: 1s ease;
+}
+.view{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 5px solid #e2e2e2;
+  transform-style: preserve-3d;
+  background: linear-gradient(145deg, #dddbd8, #fff);
+}
+.view::before{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: #e2e2e2;
+  transform: translateZ(-1px);
+}
+.view::after{
+  position: absolute;
+  content:'';
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #333333;
+}
+
+.front{transform: translateZ(50px);}
+.back{transform: rotateX(180deg) translateZ(50px);}
+.top{transform: rotateX(90deg) translateZ(50px);}
+.bottom{transform: rotateX(-90deg) translateZ(50px);}
+.right{transform: rotateY(90deg) translateZ(50px);}
+.left{transform: rotateY(-90deg) translateZ(50px);}
+
+.front::after{
+  width: 20px;
+  height: 20px;
+  background: #e02e2b;
+  margin: -9px 0 0 -11px;
+}
+.back::after{
+  margin: -35px 0 0 -30px;
+  box-shadow: 40px 0, 0 25px, 40px 25px, 0 50px, 40px 50px;
+}
+.top::after{
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 40px;
+}
+.bottom::after{
+  margin: -36px 0 0 -36px;
+  box-shadow: 26px 26px, 52px 52px, 52px 0, 0 52px;
+}
+.right::after{
+  margin: -30px 0 0 -30px;
+  box-shadow: 40px 0, 0 40px, 40px 40px;}
+.left::after{
+  margin: -35px 0 0 -35px;
+  box-shadow: 25px 25px, 50px 50px;
+}
+
+.throw{
+  border: 2px solid #226825;
+  cursor: pointer;
+  color: #226825;
+  margin-top: 60px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  transition: 0.4s;
+}
+
+.throw:hover{
+  color: #fff;
+  background-color: #226825;
+}
+
+@keyframes rolling {
+  50%{transform: rotateX(455deg) rotateY(455deg);}
+}
